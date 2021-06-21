@@ -8,14 +8,17 @@
         <link rel="stylesheet" th:href="@{/css/user/join.css}">
     </th:block>
 
-    <section layout:fragment="content">
+    <th:block layout:fragment="content">
         <h1>join</h1>
-        <form>
-
+        <form th:action="@{join}" method="post" th:object="${userEntity}">
+            <div><input type="email" th:field="*{email}" placeholder="email" autofocus></div>
+            <div><input type="password" th:field="*{pw}" placeholder="password"></div>
+            <div><input type="text" th:field="*{nm}" placeholder="nm"></div>
+            <div><input type="tel" th:field="*{tel}" placeholder="tel"></div>
+            <div>
+                <input type="submit" value="회원가입">
+                <input type="reset" value="초기화">
+            </div>
         </form>
-        <div>
-            <a th:href="@{join}">회원가입</a>
-        </div>
-
-    </section>
+    </th:block>
 </html>

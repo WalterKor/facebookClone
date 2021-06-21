@@ -2,23 +2,38 @@
 <html lang="ko"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-
 <head>
     <meta charset="UTF-8">
-    <title layout:title-pattern="$CONTENT_TITLE">CloneFacebook</title>
+    <title layout:title-pattern="$CONTENT_TITLE">ClonFacebook</title>
     <link rel="stylesheet" th:href="@{/css/common.css}">
-    <th:block lay:fagment="css"></th:block>
-    <th:block lay:fagment="script"></th:block>
-
-
-
-
+    <th:block layout:fragment="css"></th:block>
+    <th:block layout:fragment="script"></th:block>
 </head>
 <body>
-    <div id="container">
-        <th:block th:replace="commonHeader :: header"></th:block>
+<div id="container">
+    <th:block th:replace="commonHeader :: header"></th:block>
+    <section>
         <th:block layout:fragment="content"></th:block>
-
-    </div>
+    </section>
+</div>
+</body>
+</html><!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title layout:title-pattern="$CONTENT_TITLE">ClonFacebook</title>
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <th:block layout:fragment="css"></th:block>
+    <th:block layout:fragment="script"></th:block>
+</head>
+<body>
+<div id="container">
+    <th:block th:replace="commonHeader :: header"></th:block>
+    <section>
+        <th:block layout:fragment="content"></th:block>
+    </section>
+</div>
 </body>
 </html>
