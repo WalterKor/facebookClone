@@ -1,5 +1,6 @@
 package com.koreait.facebook.facebookclone.user;
 
+import com.koreait.facebook.facebookclone.common.MySecurityUtils;
 import com.koreait.facebook.facebookclone.user.model.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,10 @@ public class UserController {
     @Autowired
     private UserService service;
 
+    @Autowired
+    private MySecurityUtils utils;
+
+
     @GetMapping("/login")
     public void login(){}
 
@@ -34,6 +39,7 @@ public class UserController {
     @GetMapping("/email")
     public String email(){
         service.sendEmail();
+
         return "";
     }
 
