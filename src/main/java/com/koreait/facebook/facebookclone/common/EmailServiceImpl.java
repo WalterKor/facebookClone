@@ -31,7 +31,7 @@ public class EmailServiceImpl implements EmailService{
 
     @Override
     public void sendMimeMessage(String to, String subject, String text){
-        
+
         try {
             MimeMessage message = emailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, "UTF-8");

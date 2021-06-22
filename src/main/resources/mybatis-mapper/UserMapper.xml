@@ -6,9 +6,9 @@
 
     <insert id="join">
         INSERT INTO t_user
-        (email,nm,pw,tel)
+        (email,nm,pw,tel, authCd)
         VALUES
-        (#{email}, #{nm}, #{pw}, #{tel});
+        (#{email}, #{nm}, #{pw}, #{tel}, #{authCd});
     </insert>
 
 </mapper>
