@@ -11,6 +11,10 @@
     <th:block layout:fragment="content">
         <h1>join</h1>
         <form th:action="@{join}" method="post" th:object="${userEntity}">
+            <!--이메일 인증처리하는거-->
+            <!--임의의 authCd 5글자를 아무거나 DB에 입력시키고 메일로 보내준다 코드가 같다면 회원가입시키는걸로-->
+            <!--다시 authCd는 다시 null로 바꾼다.-->
+
             <div><input type="email" th:field="*{email}" placeholder="email" autofocus></div>
             <div><input type="password" th:field="*{pw}" placeholder="password"></div>
             <div><input type="text" th:field="*{nm}" placeholder="nm"></div>

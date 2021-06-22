@@ -67,6 +67,14 @@
             <version>0.4</version>
         </dependency>
 
+        <!--이메일 인증 부트 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+            <version>2.5.1</version>
+        </dependency>
+
+
 
 
 

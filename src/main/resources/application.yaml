@@ -13,9 +13,10 @@ spring:
 
 mybatis:
   mapper-locations: mybatis-mapper/**/*.xml
+#  패키지 아래에있는 Getter setter있는것들을 잡아준다.
   type-aliases-package: com.koreait.facebook
 
-#주소
+#주소 톰캣포트 바꾸는거 기본 8080
 server:
   port: 8090
 
