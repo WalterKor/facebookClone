@@ -10,7 +10,7 @@
 
 <th:block layout:fragment="content">
     <h1>login</h1>
-    <div th:if="${param.reademail!=null and param.email[0]=='1'}">이메일 인증을 시도해주세요</div>
+    <div th:if="${param.reademail!=null and param.reademail[0]=='1'}">이메일 인증을 시도해주세요</div>
     <div th:if="${param.auth!=null and param.auth[0]=='1'}">인증에 성공했습니다.</div>
     <div th:if="${param.auth!=null and param.auth[0]=='0'}">인증에 실패하셨습니다.</div>
 
