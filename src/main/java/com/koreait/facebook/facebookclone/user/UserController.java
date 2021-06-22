@@ -30,7 +30,7 @@ public class UserController {
     @PostMapping("/join")
     public String joinProc(UserEntity userEntity){
         service.join(userEntity);
-        return "redirect:/feed/home";
+        return "redirect:login?reademail=1";
     }
 
 
