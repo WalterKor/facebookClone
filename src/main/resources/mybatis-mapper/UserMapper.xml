@@ -10,5 +10,5 @@
         VALUES
         (#{email}, #{nm}, #{pw}, #{tel}, #{authCd});
     </insert>
-
+<!--    주석-->
 </mapper>
