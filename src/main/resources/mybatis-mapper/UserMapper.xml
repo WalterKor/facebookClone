@@ -10,5 +10,12 @@
         VALUES
         (#{email}, #{nm}, #{pw}, #{tel}, #{authCd});
     </insert>
-<!--    주석-->
+
+    <update id="auth">
+        update t_user
+        set authCd = null
+        WHERE email = #{email} And authCd = #{authCd}
+    </update>
+
+
 </mapper>

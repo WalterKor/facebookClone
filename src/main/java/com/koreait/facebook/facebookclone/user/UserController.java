@@ -2,12 +2,10 @@ package com.koreait.facebook.facebookclone.user;
 
 import com.koreait.facebook.facebookclone.common.MySecurityUtils;
 import com.koreait.facebook.facebookclone.user.model.UserEntity;
+import jdk.nashorn.internal.objects.annotations.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/user")
@@ -42,6 +40,16 @@ public class UserController {
 
         return "";
     }
+
+
+    @GetMapping("/auth")
+    public String auth(UserEntity param){
+        int result = service.auth(param);
+        return "redirect:login?auth=" + result;
+    }
+
+
+
 
 
 }

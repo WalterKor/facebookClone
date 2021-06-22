@@ -22,21 +22,24 @@ public class UserService {
 
     public int join(UserEntity param){
 
-        String  rVal =  securityUtils.getRandomDigit(5);
+        String authCd =  securityUtils.getRandomDigit(5);
 
 
         //비밀번호 암호화
         String hashedPw = BCrypt.hashpw(param.getPw(), BCrypt.gensalt());
         param.setPw(hashedPw);
-        param.setAuthCd(rVal);
+        param.setAuthCd(authCd);
         int result = mapper.join(param);
 
         if(result == 1){
         //메일 쏜게 확인되면 성공하면 (id, authcd값을 메일로 쏜다.)
 
+            String subject = "[facebook]인증메일";
+            String txt = String.format("<a href=\"http://localhost:8090/user/auth?email=%s&authCd=%s\">인증하기</a>"
+                    ,param.getEmail(), authCd);
+            email.sendMimeMessage(param.getEmail(), subject, txt);
 
         }
-
 
         return result;
 
@@ -52,6 +55,14 @@ public class UserService {
         email.sendSimpleMessage(to, subject, txt);
 
     }
+
+    //이메일 인증처리
+    public int auth(UserEntity param){
+
+        return mapper.auth(param);
+
+    }
+
 
 
 
