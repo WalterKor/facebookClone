@@ -1,4 +1,31 @@
+#spring:
+#  mail:
+#    host: smtp.gmail.com
+#    port: 587
+#    username: splitcreed1760@gmail.com
+#    password: evjddiubfejuaqgi
+#    properties:
+#      mail:
+#        smtp:
+#          auth: true
+#          startls:
+#            enable: true
+#
+
 spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: splitcreed1760@gmail.com
+    password: evjddiubfejuaqgi
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+
   thymeleaf:
     check-template-location: true
     prefix: classpath:templates/
@@ -19,6 +46,7 @@ mybatis:
 #주소 톰캣포트 바꾸는거 기본 8080
 server:
   port: 8090
+  address:
 
 #FTP File Transfer Protocaol 프로토콜 통신하는 약속
 #HTTP Hyper text Transfer Protocol 프로토콜

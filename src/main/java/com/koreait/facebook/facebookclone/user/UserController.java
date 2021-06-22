@@ -30,4 +30,12 @@ public class UserController {
         return "redirect:/feed/home";
     }
 
+
+    @GetMapping("/email")
+    public String email(){
+        service.sendEmail();
+        return "";
+    }
+
+
 }
