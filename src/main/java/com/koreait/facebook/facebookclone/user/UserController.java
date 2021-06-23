@@ -1,15 +1,19 @@
 package com.koreait.facebook.facebookclone.user;
 
-import com.koreait.facebook.facebookclone.common.MySecurityUtils;
-import com.koreait.facebook.facebookclone.user.model.UserEntity;
-import jdk.nashorn.internal.objects.annotations.Getter;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@RequestMapping("/user")
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/user")
-public class UserController {
 
     @Autowired
     private UserMapper mapper;
